@@ -5,7 +5,7 @@ describe("Tickets", () => {
     beforeEach(() => cy.visit("https://ticket-box.s3.eu-central-1.amazonaws.com/index.html"))
 
     // Cenários
-    it.only("fill all the text input field", () => {
+    it("fill all the text input field", () => {
         const firstName = "mateus";
         const lastName = "Silva"; 
 
@@ -16,7 +16,12 @@ describe("Tickets", () => {
         cy.get("#signature").type(`${firstName} ${lastName}`) 
     });
 
+
+    it.only("select two tikets", ()=> {
+        cy.get("#ticket-quantity").select("2");
+    });
+
+
     it("has'TICKETBOX' heade's heading", () => {});
 
-    
 }); // Fechando a funcionalidade
