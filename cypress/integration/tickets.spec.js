@@ -53,7 +53,6 @@ describe("Tickets", () => {
         cy.get("#email.invalid").should("not.exist");
     });
 
-
     it("fills and reset the form", () => {
         const firstName = "mateus";
         const lastName = "Silva"; 
@@ -78,7 +77,7 @@ describe("Tickets", () => {
     });
 
 
-    it.only("fills mandatory fields using support command", () => {
+    it("fills mandatory fields using support command", () => {
         
         // objeto com dados que sera passado na função 
         const custumer = {
@@ -86,16 +85,13 @@ describe("Tickets", () => {
             lastName: " Silva",
             email: "joao@gmail.com"
         };
-
         // função 
         cy.fillMandatoryFields(custumer);
+
 
         cy.get("button[type='submit']").as("submitBtn").should("not.be.disabled")
         cy.get("button[type='reset']").click()
         cy.get("@submitBtn").should("be.disabled")
-
-
-
     });
        
 
