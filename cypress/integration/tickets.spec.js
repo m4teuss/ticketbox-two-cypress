@@ -54,7 +54,7 @@ describe("Tickets", () => {
     });
 
 
-    it.only("fills and reset the form", () => {
+    it("fills and reset the form", () => {
         const firstName = "mateus";
         const lastName = "Silva"; 
         const fullName = `${firstName} ${lastName}`;
@@ -77,6 +77,26 @@ describe("Tickets", () => {
         cy.get("@submitBtn").should("be.disabled")
     });
 
+
+    it.only("fills mandatory fields using support command", () => {
+        
+        // objeto com dados que sera passado na função 
+        const custumer = {
+            firstName: "Joao",
+            lastName: " Silva",
+            email: "joao@gmail.com"
+        };
+
+        // função 
+        cy.fillMandatoryFields(custumer);
+
+        cy.get("button[type='submit']").as("submitBtn").should("not.be.disabled")
+        cy.get("button[type='reset']").click()
+        cy.get("@submitBtn").should("be.disabled")
+
+
+
+    });
        
 
 }); // Fechando a funcionalidade

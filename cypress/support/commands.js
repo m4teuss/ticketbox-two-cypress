@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+// criar função customizada
+
+Cypress.Commands.add('fillMandatoryFields', (dados) => {
+    
+    // recebe os valores do objeto através da função
+    cy.get("#first-name").type(dados.firstName)
+    cy.get("#last-name").type(dados.lastName)
+    cy.get("#email").type(dados.email)
+    cy.get("#agree").click();
+
+})
