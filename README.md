@@ -1,2 +1,2 @@
-# cypress-hc1
-basic
+# cypress-hubcnx-rev1
+
