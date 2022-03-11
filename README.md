@@ -1,2 +1,2 @@
-# cypress-hubcnx-rev1
+# CYPRESS-HUBCNX-REV1
 
