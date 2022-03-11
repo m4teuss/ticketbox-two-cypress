@@ -1,2 +1,2 @@
-# cypress-ticketbox-rv1
+# ticketbox-cy-rv1
 
